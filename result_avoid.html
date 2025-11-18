@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나와 AI, 우리의 관계는?</title>
+
+<style>
+  body {
+    margin:0;
+    background:#E5E5E5;
+    display:flex;
+    justify-content:center;
+  }
+
+  .outer-bg {
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  .phone-frame {
+    width:390px;
+    min-height:100vh;
+    background: linear-gradient(
+    to bottom,
+    #FFFCDF 20%,   /* 상단 컬러 */
+    #FFFFFF 85%    /* 아래로 내려갈수록 흰색 */
+    );
+    box-shadow:0 0 20px rgba(0,0,0,0.18);
+    padding:30px 24px 60px;
+    box-sizing:border-box;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    position:relative;
+  }
+
+  .content {
+    position:relative;
+    z-index:1;
+  }
+
+  .top-heart {
+    width:38px;
+    display:block;
+    margin:0 auto 5px;
+    animation: heartBounce 2.4s ease-in-out infinite;
+  }
+
+  .top-text {
+    text-align:center;
+    color:#333;
+    font-size:14px;
+    line-height:1.5;
+    margin-bottom:15px;
+  }
+
+  .main-title {
+    text-align:center;
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#333;
+  }
+
+  .character-img {
+    width:333px;
+    display:block;
+    margin:0 auto 15px;
+  }
+
+  .bubble-box {
+    background:#FFF8AA;
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:40px;
+    font-size:16px;
+    text-align: center;
+    line-height:1.7;
+    color:#333;
+    border: 1px solid #000;
+  }
+
+  .section-title {
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#333;
+  }
+
+  .list {
+    font-size:15px;
+    line-height:1.7;
+    color:#333;
+    margin-bottom:26px;
+  }
+
+  .restart-btn {
+    background:white;
+    border:none;
+    padding:14px 20px;
+    border-radius:999px;
+    font-size:17px;
+    font-weight:600;
+    margin:70px auto 40px;
+    display:block;
+    width:220px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    cursor:pointer;
+  }
+
+  .restart-btn:active {
+    transform:translateY(2px);
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .footer-heart {
+    width:38px;
+    display:block;
+    margin:0 auto 12px;
+  }
+
+  .footer-text {
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    line-height:1.6;
+  }
+
+  .gamja-flower {
+    font-family: "Gamja Flower", sans-serif;
+  }
+
+  @keyframes heartBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+  @keyframes characterPop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+  }
+
+@keyframes characterFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+  }
+
+.character-img {
+  animation: characterPop 0.7s ease-out 0.2s forwards,
+             characterFloat 2.8s ease-in-out 1s infinite;
+  opacity: 0; /* pop 등장 전 보이지 않게 */
+  }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<div class="outer-bg">
+  <div class="phone-frame">
+
+    <!-- 배경 블러 -->
+    <div class="bg-blur"></div>
+
+    <div class="content gamja-flower">
+
+      <img src="images/heart2.png" class="top-heart">
+
+      <div class="top-text">
+        AI? 흥미보다는 피로감이 먼저.... <br>
+        차근차근 자기 템포로 접근하는 당신은
+      </div>
+
+      <div class="main-title">회피형</div>
+
+      <img src="images/result_avoid.png" class="character-img">
+
+      <div class="bubble-box reveal">
+        강점: 일관성, 깊이 있는 기존 역량<br><br>
+        발전 방향: 억지 공부보다 '필요할 때만' 소량 도입하기
+      </div>
+
+      <div class="section-title reveal">🐢 ① 강요 없는 최소 접근법</div>
+      <div class="list reveal">
+        · 반드시 필요한 상황일 때만 초간단 자동화만 사용 (예: 문서 요약, 표 정리) <br>
+        · 기존 방식 + AI 활용 10%
+      </div>
+
+      <div class="section-title reveal">🔨 ② 기존 역량 보강 중심 전략</div>
+      <div class="list reveal">
+        · 전문 분야에서 AI를 도구로만 활용하는 방향! (예: 단순 반복 업무 줄이고 핵심 업무 집중)
+      </div>
+
+      <div class="section-title reveal">😊 ③ 스트레스 없이 시작하는 AI 습관</div>
+      <div class="list reveal">
+        · 10분만 해도 성과가 눈에 보이는 초단기 작업 (한 문장 요약, 이메일 정리, 자료 비교)
+      </div>
+
+      <div class="section-title reveal">🎧 ④ 감정적 압박 줄이기</div>
+      <div class="list reveal">
+        · 해야 한다는 압박을 줄이고 필요하면 사용, 아니면 패스 원칙으로도 충분함!<br>
+        · AI에게 가벼운 대화만 건네 보며 익숙해지기
+      </div>
+
+      <button class="restart-btn reveal" onclick="location.href='index1.html'">
+        다시 하러 가기
+      </button>
+
+      <img src="images/heart2.png" class="footer-heart">
+
+      <div class="footer-text">
+        서울여자대학교 바롬종합설계프로젝트<br>
+        ChatSWUPT팀
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(r => observer.observe(r));
+
+window.onload = () => {
+  reveals.forEach(r => {
+    if (r.getBoundingClientRect().top < window.innerHeight) {
+      r.classList.add("show");
+    }
+  });
+};
+</script>
+</body>
+</html>

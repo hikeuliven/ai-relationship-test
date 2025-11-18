@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나와 AI, 우리의 관계는?</title>
+
+<style>
+  body {
+    margin:0;
+    background:#E5E5E5;
+    display:flex;
+    justify-content:center;
+  }
+
+  .outer-bg {
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  .phone-frame {
+    width:390px;
+    min-height:100vh;
+    background: linear-gradient(
+    to bottom,
+    #FFE9F4 20%,   /* 상단 컬러 */
+    #FFFFFF 85%    /* 아래로 내려갈수록 흰색 */
+    );
+    box-shadow:0 0 20px rgba(0,0,0,0.18);
+    padding:30px 24px 60px;
+    box-sizing:border-box;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    position:relative;
+  }
+
+  .content {
+    position:relative;
+    z-index:1;
+  }
+
+  .top-heart {
+    width:38px;
+    display:block;
+    margin:0 auto 5px;
+    animation: heartBounce 2.4s ease-in-out infinite;
+  }
+
+  .top-text {
+    text-align:center;
+    color:#333;
+    font-size:14px;
+    line-height:1.5;
+    margin-bottom:15px;
+  }
+
+  .main-title {
+    text-align:center;
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#333;
+  }
+
+  .character-img {
+    width:333px;
+    display:block;
+    margin:0 auto 15px;
+  }
+
+  .bubble-box {
+    background:#FFC7E2;
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:40px;
+    font-size:16px;
+    text-align: center;
+    line-height:1.7;
+    color:#333;
+    border: 1px solid #000;
+  }
+
+  .section-title {
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#333;
+  }
+
+  .list {
+    font-size:15px;
+    line-height:1.7;
+    color:#333;
+    margin-bottom:26px;
+  }
+
+  .restart-btn {
+    background:white;
+    border:none;
+    padding:14px 20px;
+    border-radius:999px;
+    font-size:17px;
+    font-weight:600;
+    margin:70px auto 40px;
+    display:block;
+    width:220px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    cursor:pointer;
+  }
+
+  .restart-btn:active {
+    transform:translateY(2px);
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .footer-heart {
+    width:38px;
+    display:block;
+    margin:0 auto 12px;
+  }
+
+  .footer-text {
+    text-align:center;
+    font-size:13px;
+    color:#555;
+    line-height:1.6;
+  }
+
+  .gamja-flower {
+    font-family: "Gamja Flower", sans-serif;
+  }
+
+  @keyframes heartBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+  }
+
+  @keyframes characterPop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+  }
+
+@keyframes characterFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+  }
+
+.character-img {
+  animation: characterPop 0.7s ease-out 0.2s forwards,
+             characterFloat 2.8s ease-in-out 1s infinite;
+  opacity: 0; /* pop 등장 전 보이지 않게 */
+  }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="outer-bg">
+  <div class="phone-frame">
+
+    <!-- 배경 블러 -->
+    <div class="bg-blur"></div>
+
+    <div class="content gamja-flower">
+
+      <img src="images/heart2.png" class="top-heart">
+
+      <div class="top-text">
+        변화는 곧 기회! <br>
+        AI 시대의 흐름을 알고 전략적으로 적응하는 당신은
+      </div>
+
+      <div class="main-title">안정형</div>
+
+      <img src="images/result_stable.png" class="character-img">
+
+      <div class="bubble-box reveal">
+        강점: 분석력, 실행 정신, 주도성<br><br>
+        발전 방향: 커리어 포트폴리오에 AI 활용 사례 추가하기!
+      </div>
+
+      <div class="section-title reveal">🔍 ① AI 역량 성장을 위한 액션 플랜</div>
+      <div class="list reveal">
+        · 나만의 ‘AI 포트폴리오' 테마 정하기 (예: 교육, 금융, 디자인 등)<br>
+        · 작게라도 매달 1건씩 프로젝트 진행해 보기<br>
+        · AI 관련 공모전이나 챌린지 참가가 성장 속도는 제일 빠름!
+      </div>
+
+      <div class="section-title reveal">📝 ② 커리어 전략</div>
+      <div class="list reveal">
+        · 관심 분야별 AI 활용 Skill Map 만들어 보기<br>
+        · AI 활용 능력을 자격증/수료증으로 구조화<br>
+        · GitHub, Notion 등 온라인 포트폴리오 정리
+      </div>
+
+      <div class="section-title reveal">🧠 ③ 멘탈 & 습관 관리</div>
+      <div class="list reveal">
+        · “과몰입 → 번아웃” 패턴 조심<br>
+        · 주 1회 성장 기록 회고 루틴 만들어 가기
+      </div>
+
+      <button class="restart-btn reveal" onclick="location.href='index1.html'">
+        다시 하러 가기
+      </button>
+
+      <img src="images/heart2.png" class="footer-heart">
+
+      <div class="footer-text">
+        서울여자대학교 바롬종합설계프로젝트<br>
+        ChatSWUPT팀
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(r => observer.observe(r));
+
+window.onload = () => {
+  reveals.forEach(r => {
+    if (r.getBoundingClientRect().top < window.innerHeight) {
+      r.classList.add("show");
+    }
+  });
+};
+</script>
+</body>
+</html>

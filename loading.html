@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+<title>나와 AI, 우리의 관계는?</title>
+
+<style>
+  body {
+    margin:0;
+    background:#E5E5E5;
+    display:flex;
+    justify-content:center;
+  }
+
+  .outer-bg {
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  /* 📌 아이폰 화면 */
+  .phone-frame {
+    width:390px;
+    min-height:100vh;
+    background:#ffffff;
+    box-shadow:0 0 20px rgba(0,0,0,0.18);
+    padding:0 20px;
+    position:relative;
+    display:flex;
+    justify-content:center;   /* 세로 중앙 */
+    align-items:center;       /* 가로 중앙 */
+    overflow:hidden;
+    z-index:0; 
+  }
+
+  /* 📌 피그마 원형 블러 배경 (W/H 300px, blur 200px, color #FFC7E2) */
+  .bg-blur {
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#FFC7E2;
+    border-radius:50%;
+    filter: blur(100px);
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    opacity:0.85;
+    z-index:-1;
+  }
+
+  /* 📌 중앙 덩어리 (로봇 + LOADING + 진행바 + 텍스트) */
+  .loading-wrapper {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    width:100%;
+  }
+
+  .loading-img {
+    width:98px;
+    margin-bottom:5px;
+  }
+
+  .loading-text {
+    font-size:24px;
+    font-weight:600;
+    color:#444;
+    margin-bottom:15px;
+  }
+
+  /* 📌 진행바 */
+  .progress-wrapper {
+    width:90%;
+    height:10px;
+    background:#E4D3DB;
+    border-radius:999px;
+    overflow:hidden;
+    border:1px solid #000;
+    margin-bottom:20px;
+  }
+
+  #progressBar {
+    width:0%;
+    height:100%;
+    background:#9af5ff;
+    border-radius:999px;
+    animation:loading 2.5s linear forwards; /* ⏱ 2.5초로 변경 */
+  }
+
+  @keyframes loading {
+    from { width:0%; }
+    to { width:100%; }
+  }
+
+  .gamja-flower-regular {
+    font-family: "Gamja Flower", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="outer-bg">
+  <div class="phone-frame">
+
+    <!-- 🔥 피그마 동일 블러 배경 -->
+    <div class="bg-blur"></div>
+
+    <!-- 🔥 로딩 덩어리 전체 -->
+    <div class="loading-wrapper">
+      <img src="images/robot.png" class="loading-img" alt="로딩 이미지">
+
+      <div class="loading-text gamja-flower-regular">LOADING...</div>
+
+      <div class="progress-wrapper">
+        <div id="progressBar"></div>
+      </div>
+
+      <div class="gamja-flower-regular">
+        곧 당신과 AI의 관계 & 솔루션이 제공됩니다!
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  /* 🔥 2.5초 후 페이지 이동 */
+  setTimeout(() => {
+
+    const score = JSON.parse(localStorage.getItem("resultScore")) || [0,0,0,0];
+    const max = Math.max(...score);
+    const idx = score.indexOf(max);
+
+    if (idx === 0) location.href = "result_stable.html";
+    else if (idx === 1) location.href = "result_adapt.html";
+    else if (idx === 2) location.href = "result_anxiety.html";
+    else location.href = "result_avoid.html";
+
+  }, 2500);   /* ⏱ 2.5초 */
+</script>
+
+</body>
+</html>
